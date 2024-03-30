@@ -44,6 +44,7 @@ Data Acquisition Pipeline ( `fetch_ncei_data` DAG ) contains the following opera
     -  `fetch_files`: Fetch the individual data files (Python Operator)
     -  `zip_files`: Zip them into an archive. (Python Operator)
     -  `move_archive`: Move the archive to the required location. (Python Operator)
+    
     **Task dependencies**
 ```mermaid
 graph LR;
@@ -60,6 +61,8 @@ graph LR;
     - `compute_monthly_averages`: Compute monthly averages (Python Operator using Apache Beam)
     - `create_heatmap_visualization`: Create visualization with heatmaps (Python Operator using Apache Beam)
     - `delete_csv_file_task`: Delete CSV file
+
+   **Task dependencies**
 ```mermaid
 graph LR;
     wait_for_archive_task --> unzip_archive_task;
